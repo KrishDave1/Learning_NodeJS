@@ -3,10 +3,10 @@ const path = require("path");
 const app = express();
 
 // setup static and middleware.
+app.use(express.static("./public"));
 // So what is public folder? It is a folder that contains all the static assets.Meaning all the files that are not going to change during the lifetime of our application.
 // Also the files may be dynamic for browser but they are static for the server.
 
-app.use(express.static("./public"));
 
 // app.get('/', (req,res) => {
 //     res.sendFile(path.resolve(__dirname, './navbar-app/index.html'))
