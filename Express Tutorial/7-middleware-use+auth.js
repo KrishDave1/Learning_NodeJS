@@ -14,6 +14,7 @@ const morgan = require("morgan");
 // For multiple middleware functions we can write them as an array.
 // app.use([logger, authorize]);
 
+// This is a 3rd party middleware function.
 app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
@@ -26,7 +27,8 @@ app.get("/api/products", (req, res) => {
   res.send("Products");
 });
 app.get("/api/items", (req, res) => {
-  console.log(req.user);
+  console.log(req.user); 
+  // This logs is getting added because we wrote morgan in app.use().
   res.send("Items");
 });
 
