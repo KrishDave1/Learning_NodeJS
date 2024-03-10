@@ -7,7 +7,7 @@ const logger = (req, res, next) => {
   console.log(method, url, time);
   // There are 2 options here -
   // 1) Either you break the cycle for this url and say that I will send the response from here, then this will break the cycle and the part written in app.get will not work.
-  // res.send("testing");
+  // res.send("testing"); Example of sending response from this middleware function to the receiving function which may be app.get or something else.Here problem is we need to do this repetively so 2nd option is better.
   // 2) You can use next to pass the control to the next middleware function, meaning if any other such function is present then to that function or directly to app.get to do its own functionality.
   next();
 };

@@ -9,7 +9,7 @@ const homeImage = readFileSync("./navbar-app/logo.svg");
 const homeLogic = readFileSync("./navbar-app/browser-app.js");
 
 const server = http.createServer((req, res) => {
-  // console.log(req.url); // Tells me on which psge I am requesting from server.
+  // console.log(req.url); // Tells me on which page I am requesting from server.
   // console.log(req.method); // What type of request is requested from server.
   const url = req.url;
   console.log(url);
